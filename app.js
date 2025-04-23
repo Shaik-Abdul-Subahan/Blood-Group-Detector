@@ -34,7 +34,7 @@ function startScan(e) {
           const randomBloodGroup = bloodGroups[Math.floor(Math.random() * bloodGroups.length)];
           scanToAnalyseElement.innerHTML = `<h2>Blood Group Detected: ${randomBloodGroup} 🩸</h2>`; // Show result here
           scanToAnalyseElement.style.color = "#fff";  // Set the text color to white for better visibility
-          scanToAnalyseElement.style.backgroundColor = "rgba(0, 153, 255, 0.8)";  // Add a background color to make it pop
+          scanToAnalyseElement.style.backgroundColor = "rgba(226, 255, 6, 1)";  // Add a background color to make it pop
 
           fingerprintImg.style.pointerEvents = 'auto'; // Re-enable the image after the scan
           isScanning = false;

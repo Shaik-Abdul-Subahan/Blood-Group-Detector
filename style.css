@@ -1,350 +1,211 @@
 :root {
-    --bg-color: #d2e4f5;
-    --gradient-white-bg: linear-gradient(0deg, #fff 0%, #edf4fa 51%, #e5eef7 100%);
-    --gradient-color-bg: linear-gradient(180deg, rgba(247, 1, 120, 1) 0%, rgba(160, 8, 156, 1) 51%, rgb(13, 35, 178) 100%);
-    --main-color: #e6006d;
-    --font-color: #000000;
-    --hover-box-shadow: rgba(236, 11, 11, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-    --gradient-white-bg2: linear-gradient(98deg, #e9a7a7 0%, #cc5efc 100%);
-  }
-  
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #3c3ced;
-  }
-  
-  section {
-    text-align: center;
-    margin-top: 40px;
-  }
-  
-  /* Home Section */
-  .home {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2em;
-    background: var(--gradient-white-bg2);
-    padding: 20px;
-    box-sizing: border-box;
-    width: 100%;
-  }
-  
-  .hero-info h3 {
-    color: var(--font-color);
-    font-weight: 500;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-  }
-  
-  .hero-info h1 {
-    font-size: 3rem;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-  
-  .hero-info p {
-    font-size: 1.1rem;
-    color: var(--font-color);
-    line-height: 1.8rem;
-    max-width: 800px;
-    margin: 0 auto;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-  
-  /* Fingerprint Scanner Section */
-  .scanner-container {
-    position: relative;
-    width: 250px;
-    height: 250px;
-    overflow: hidden;
-    border-radius: 50%;
-    border: 5px solid rgba(0, 153, 255, 0.8); /* Make the circle border */
-    box-shadow: 0 0 15px rgba(0, 153, 255, 0.5);
-    margin: 50px auto;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent; /* Don't color the inner circle, only border */
-  }
-  
-  .fingerprint-img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.8;
-    border-radius: 50%; /* Make sure the image is circular */
-  }
-  
-  .scanner-line {
-    position: absolute;
-    width: 100%;
-    height: 4px;
-    background: rgba(0, 153, 255, 0.8);
-    box-shadow: 0 0 10px rgba(0, 153, 255, 0.8);
-    top: 0;
-    animation: scan 2.5s infinite alternate ease-in-out;
-  }
-  
-  .fingerprint-btn {
-    display: inline-block;
-    padding: 15px 40px;
-    font-size: 1.2rem;
-    color: white;
-    background-color: #007bff;
-    border-radius: 5px;
-    text-decoration: none;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s;
-  }
-  
-  .fingerprint-btn:hover {
-    background-color: #0056b3;
-  }
-  
-  .fingerprint-btn:active {
-    background-color: #004085;
-  }
-  
-  /* Result Text Styles */
-  #scan-to-analyse {
-    font-size: 2rem;
-    font-weight: 700;
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 10px;
-    color: #333;
-    transition: all 0.3s ease;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    width: 100%;
-    box-sizing: border-box;
-    margin: 20px auto;
-  }
-  
-  /* Status and Result Styling */
-  .status, .result {
-    font-size: 1.2rem;
-    color: #333;
-    text-align: center;
-    margin-top: 10px;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-  
-  /* Reset Button Styles */
-  .reset-btn {
-    background-color: #e6006d;
-    color: #fff;
-    font-size: 1.2rem;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 15px;
-    transition: background-color 0.3s;
-  }
-  
-  .reset-btn:hover {
-    background-color: #d5005d;
-  }
-  
-  /* Animation for scanner line */
-  @keyframes scan {
-    0% {
-      top: 0;
-    }
-    100% {
-      top: 100%;
-    }
-  }
-  
-  @keyframes moveText {
-    0% {
-      background-position: -200% 0;
-    }
-    100% {
-      background-position: 200% 0;
-    }
-  }
-  
-  @keyframes moveCursorText {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
-    }
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .home {
-      padding: 10px;
-      gap: 1.5em;
-      width: 100%;
-    }
-  
-    .hero-info h1 {
-      font-size: 2rem;
-    }
-  
-    .text-animate h2 {
-      font-size: 1.6rem;
-    }
-  
-    .fingerprint-btn {
-      padding: 12px 30px;
-      font-size: 1rem;
-    }
-  
-    .scanner-container {
-      max-width: 230px;
-      padding-bottom: 75%; /* Adjusted for smaller devices */
-    }
-  
-    #scan-to-analyse {
-      font-size: 1.6rem;
-      padding: 15px;
-    }
-  
-    .reset-btn {
-      font-size: 1rem;
-      padding: 8px 16px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .home {
-      padding: 10px;
-    }
-  
-    .hero-info h1 {
-      font-size: 1.8rem;
-    }
-  
-    .text-animate h2 {
-      font-size: 1.4rem;
-    }
-  
-    .scanner-container {
-      max-width: 200px;
-      padding-bottom: 80%; /* Adjusted for mobile screens */
-    }
-  
-    #scan-to-analyse {
-      font-size: 1.4rem;
-    }
-  
-    .reset-btn {
-      font-size: 0.9rem;
-      padding: 6px 12px;
-    }
-  }
+  --bg-color: #d2e4f5;
+  --gradient-white-bg: linear-gradient(0deg, #fff 0%, #edf4fa 51%, #e5eef7 100%);
+  --gradient-color-bg: linear-gradient(180deg, rgba(247, 1, 120, 1) 0%, rgba(160, 8, 156, 1) 51%, rgb(13, 35, 178) 100%);
+  --main-color: #e6006d;
+  --font-color: #000000;
+  --hover-box-shadow: rgba(236, 11, 11, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  --gradient-white-bg2: linear-gradient(298deg, #efff3c 0%, #5ee7fc 100%);
+}
+
+/* Apply box-sizing globally */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #3c3ced;
+}
+
+/* Home Section */
+.home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  background: var(--gradient-white-bg2);
+  padding: 20px;
+  width: 100%;
+}
+
+.hero-info h3 {
+  color: var(--font-color);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.hero-info h1 {
+  font-size: 3rem;
+}
+
+.hero-info p {
+  font-size: 1.1rem;
+  color: var(--font-color);
+  line-height: 1.8rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Text Animation */
+.text-animate {
+  width: 100%;
+  position: relative;
+}
+
+.text-animate h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: transparent;
+  -webkit-text-stroke: 0.1vw #770753;
+  background: var(--gradient-color-bg);
+  background-size: 200%;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 0.6s;
+  letter-spacing: 2px;
+  animation: moveText 3s linear infinite;
+  animation-delay: 2s;
+}
+
+.text-animate h2::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: -3px;
+  width: 0;
+  height: 70%;
+  border-right: 2px solid var(--main-color);
+  animation: moveCursorText 3s linear infinite;
+  animation-delay: 2s;
+}
+
 /* Fingerprint Scanner Section */
 .scanner-container {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    overflow: hidden;
-    background-color: #111f4d;
-    border-radius: 50%;
-    box-shadow: 0 0 15px rgba(0, 153, 255, 0.5);
-    margin: 50px auto;
-    text-align: center;
-  }
-  
-  .fingerprint-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.8;
-  }
-  
-  /* Create the scan line effect */
-  .scan-line {
-    position: absolute;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  background-color: #111f4d;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0, 153, 255, 0.5);
+  margin: 50px auto;
+  text-align: center;
+}
+
+.fingerprint-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+.scanner-line {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: rgba(0, 153, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 153, 255, 0.8);
+  top: 0;
+  animation: scan 2.5s infinite alternate ease-in-out;
+}
+
+.fingerprint-btn {
+  display: inline-block;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #007bff;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.fingerprint-btn:hover {
+  background-color: #0056b3;
+}
+
+.fingerprint-btn:active {
+  background-color: #004085;
+}
+
+/* Result Text Styles */
+#scan-to-analyse {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  color: #333;
+  transition: all 0.3s ease;
+  background-color: #eeff00;
+  box-shadow: 0 4px 12px rgb(56, 56, 56); /* Subtle shadow for better visibility */
+  width: 90%;
+  max-width: 500px; /* Restrict width */
+  margin: 20px auto;
+  overflow: hidden; /* Ensure it doesn't overflow */
+}
+
+/* Status and Result Styling */
+.status, .result {
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Reset Button Styles */
+.reset-btn {
+  background-color: #e6006d;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s;
+}
+
+.reset-btn:hover {
+  background-color: #d5005d;
+}
+
+/* Animation for scanner line */
+@keyframes scan {
+  0% {
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: rgba(0, 153, 255, 0.8);
-    box-shadow: 0 0 10px rgba(0, 153, 255, 0.8);
-    animation: scanEffect 2s infinite alternate;
-    z-index: 1;  /* Ensure the line stays on top of the image */
   }
-  
-  /* Scan line animation */
-  @keyframes scanEffect {
-    0% {
-      top: -4px;  /* Start just above the image */
-    }
-    100% {
-      top: 100%;  /* End just below the image */
-    }
+  100% {
+    top: 100%;
   }
-  
-  .fingerprint-btn {
-    display: inline-block;
-    padding: 15px 40px;
-    font-size: 1.2rem;
-    color: white;
-    background-color: #007bff;
-    border-radius: 5px;
-    text-decoration: none;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s;
-  }
-/* Animation for scan result text */
+}
+
 @keyframes moveText {
-    0% {
-      background-position: -200% 0;
-    }
-    100% {
-      background-position: 200% 0;
-    }
+  0% {
+    background-position: -200% 0;
   }
-  
-  .text-animate {
-    width: 100%;
-    position: relative;
+  100% {
+    background-position: 200% 0;
   }
-  
-  .text-animate h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: transparent;
-    -webkit-text-stroke: 0.1vw #770753;
-    background: var(--gradient-color-bg);
-    background-size: 200%;
-    background-repeat: no-repeat;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: 0.9s;
-    letter-spacing: 2px;
-    animation: moveText 2s linear infinite;
-    animation-delay: 2s;
+}
+
+@keyframes moveCursorText {
+  0%, 100% {
+    opacity: 1;
   }
-  
-  .text-animate h2::before {
-    content: "";
-    position: absolute;
-    top: 7px;
-    left: -3px;
-    width: 0;
-    height: 70%;
-    border-right: 2px solid var(--main-color);
-    animation: moveCursorText 2s linear infinite;
-    animation-delay: 1s;
+  50% {
+    opacity: 0;
   }
-      
+}
