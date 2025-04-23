@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fingerprint Scanner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Home Section with Introduction -->
+  <section class="home" id="home">
+    <div class="hero-info">
+      <h3>Welcome To The Project!</h3>
+      <h1>Blood Group Detection Using Fingerprint</h1>
+      <p>
+        This project introduces a novel method for predicting an individual's blood group using fingerprint patterns, offering a non-invasive and rapid alternative to traditional blood typing. The system leverages machine learning and image processing to analyze fingerprint features like ridge endings, bifurcations, and minutiae points, mapping them against a dataset of known blood groups. The model is trained to identify correlations between these patterns and blood types, improving in accuracy as more data is collected.
+      </p>
+      <p>
+        <h3><b>Key benefits include:</b></h3>
+        <ul>
+          <li><strong>Non-invasive identification:</strong> No need for blood samples.</li>
+          <li><strong>Fast and accessible:</strong> Instant predictions with a fingerprint scan.</li>
+          <li><strong>Adaptable:</strong> Can be integrated into mobile devices, hospital networks, and emergency units.</li>
+        </ul>
+      </p>
+      <p>
+        This technology holds potential for hospital management, emergency response, and forensic identification, making healthcare diagnostics more efficient and automated. It could also integrate with electronic health records and national ID systems in the future. The project is a proof-of-concept for blood group prediction using biometric data, contributing to the field of intelligent health informatics and paving the way for personalized healthcare.
+      </p>
+
+      <div class="text-animate" id="scan-to-analyse">
+        <h2>Scan To Analyse!</h2>
+      </div>
+    </section>
+  
+    <!-- Fingerprint Scanner Section -->
+    <section>
+      <div class="scanner-container">
+        <img src="https://static.wixstatic.com/media/7e7bb8_0f70eb7780e243a58e5353a354c5652c~mv2.jpg/v1/fill/w_568,h_378,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/7e7bb8_0f70eb7780e243a58e5353a354c5652c~mv2.jpg" alt="Fingerprint" id="fingerprint-img" class="fingerprint-img">
+        <div class="scanner-line" id="scanner-line"></div>
+      </div>
+      
+      <!-- Status Section -->
+      <p id="status" class="status"></p>
+      
+      <!-- Reset Button -->
+      <button id="reset-btn" class="reset-btn" style="display: none;">Reset</button>
+    </section>
+  
+    <script src="app.js"></script>
+  </body>
+  </html>
